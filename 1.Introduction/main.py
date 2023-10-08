@@ -65,6 +65,6 @@ def modify_post(id:int, new_post: Post):
     for index, post in enumerate(posts.copy()):
         if post["id"] == id:
             posts[index] = new_post_dict
-            return {"message": "updated post"}
+            return {"data": new_post_dict}
 
     return HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail=f"post with id {id} was not found")
